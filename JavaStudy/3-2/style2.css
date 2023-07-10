@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    height: 100%;
+}
+
+/* 横400px高さ450px */
+ 
+#wrapper {
+    width: 400px;
+    height: 450px;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ヘッダー 高さ100px 色#141f40 */
+.header {
+    width: auto;
+    height: 100px;
+    background-color: #141f40;
+}
+
+/*  コンテンツ 高さ250px */
+.contents {
+    width: auto;
+    height: 250px;
+}
+
+/* レフト横150px高さ250px色#80bfa8 */
+.left {
+    float: left;
+    width: 150px;
+    height: 250px;
+    background-color: #80bfa8;
+}
+
+/* ライト 横250px高さ250px */
+.right {
+    float: right;
+    width: 250px;
+    height: 250px;
+}
+
+/* ライト上 横250px高さ150px */
+.right-upper {
+    width: auto;
+    height: 150px;
+}
+
+/* ライト1 横100px高さ150px色#ff9e6b */
+.right1 {
+    float: right;
+    width: 100px;
+    height: 150px;
+    background-color: #ff9e6b;
+}
+
+/* ライト2 横150px高さ50px色#dbd400 */
+.right2 {
+    float: left;
+    width: 150px;
+    height: 50px;
+    background-color: #dbd400;
+}
+
+/* ライト3 横150px高さ100px色#0093b7 */
+.right3 {
+    float: left;
+    width: 150px;
+    height: 100px;
+    background-color: #0093b7;
+}
+
+/* ライト下 横250px高さ100px色#8c2727 */
+.right-lower {
+    height: 100px;
+    background-color: #8c2727;
+}
+
+/* フッター 高さ100px色#d98d30 */
+.footer {
+    height: 100px;
+    background-color: #d98d30;
+}
+/*  */
