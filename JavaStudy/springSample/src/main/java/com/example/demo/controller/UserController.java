@@ -4,8 +4,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.entity.UserEntity;
 import com.example.demo.service.UserService;
@@ -25,14 +26,30 @@ public class UserController {
    * @param  model Model
    * @return  ユーザー情報一覧画面のHTML
    */
-  @RequestMapping(value = "/user/list",method = RequestMethod.GET)
+  @RequestMapping(value = "/user/list")
 	public String displayList(Model model) {
 
     List<UserEntity> list = userService.searchAll();
     model.addAttribute("userlist",list);
     return "user/list";
-
-
-
+  }
+    /**
+	 * ユーザー新規登録画面を表示
+	 * @param  model Model
+	 * @return  ユーザー情報一覧画面
+	 */
+	@GetMapping("/user/add")
+	public String displayAdd(Model model) {
+		return "user/add";
+	}
+	/**
+	 * ユーザー情報詳細画面を表示
+	 * @param  id 表示するユーザーID
+	 * @param  model Model
+	 * @return  ユーザー情報詳細画面
+	 */
+	@GetMapping("/user/{id}")
+	public String displayView(@PathVariable  Integer id, Model model) {
+		return "user/view";
   }
 }
