@@ -10,6 +10,4 @@ import com.example.demo.entity.UserEntity;
  * ユーザー情報 Repository
  */
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
-
-}
+public interface UserRepository extends JpaRepository<UserEntity, Long> {}
