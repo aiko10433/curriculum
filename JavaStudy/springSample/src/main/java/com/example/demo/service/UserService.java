@@ -69,10 +69,15 @@ public class UserService {
 	    user.setPhone(userUpdateRequest.getPhone());
 	    user.setUpdateDate(new Date());
 	    userRepository.save(user);
-
-
-
-
+	}
+	/**
+	 * ユーザー情報 物理削除
+	 * @param  id ユーザーID
+	 */
+	public void delete(Long id) {
+		//実装2行
+		UserEntity user = findById(id);
+		userRepository.delete(user);
 
 	}
 }
