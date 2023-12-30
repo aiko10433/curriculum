@@ -1,0 +1,28 @@
+@charset "UTF-8";
+   .table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+   }
+   .table th {
+    padding: 10px;
+    border-bottom: solid 4px black;
+   }
+   .table td {
+    padding: 10px;
+    border-bottom: solid 1px black;
+   }
+   .Form-Btn1 {
+    background: #5bc8ac;
+    color: #fff;
+    border-radius: 6px;
+   }
+   .Form-Btn2 {
+    background: #a0a6a5;
+    color: #fff;
+    border-radius: 6px;
+   }
+   a {
+	color: white;
+   }

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー一覧</title>
+    <link href="/css/list.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>ユーザー一覧</h1>
+    <table class="table">
+        <tr>
+         <th>ID</th>
+         <th>名前</th>
+         <th>年齢</th>
+         <th>電話番号</th>
+         <th></th>
+        </tr>
+        <tr th:each=" user_table : ${list}" th:object="${user_table}">
+         <td th:text="*{id}"></td>
+         <td th:text="*{name}"></td>
+         <td th:text="*{age}"></td>
+         <td th:text="*{phone}"></td>
+         <td><button type="button" class="Form-Btn1"><a th:href="@{/{id}/edit(id=*{id})}">編集</a></button></td>
+        </tr>
+    </table>
+    <button type="button" class="Form-Btn2"><a th:href="@{/mypage}">戻る</a></button>
+</body>
+</html>

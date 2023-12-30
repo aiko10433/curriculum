@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>編集</title>
+	<link href="/css/entry.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+	<h1 style="text-align:center">ユーザ編集・削除</h1>
+	<form th:action="@{/update}" th:object="${userUpdateRequest}" method="post">
+		<div class="Form">
+			<div th:if="${validationError}" th:each="error : ${validationError}">
+			</div>
+			<div class="Form-Item">
+				<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>ID</p>
+				<input type="text" class="Form-Item-Input" th:field="*{id}" readonly>
+				<input type="hidden" th:field="*{id}">
+				</th:if>
+			</div>
+			<div class="Form-Item">
+				<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>名前</p>
+				<p th:errors="*{name}" td style="color: red;"></p>
+				<input type="text" class="Form-Item-Input" th:field="*{name}" placeholder="例）山田太郎">
+				</th:if>
+			</div>
+			<div class="Form-Item">
+				<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>年齢</p>
+				<p th:errors="*{age}" td style="color: red;"></p>
+				<input type="text" class="Form-Item-Input" th:field="*{age}" placeholder="例）00">
+				</th:if>
+			</div>
+			<div class="Form-Item">
+				<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>電話番号</p>
+				<p th:errors="*{phone}" td style="color: red;"></p>
+				<input type="text" class="Form-Item-Input" th:field="*{phone}" placeholder="例）000-0000-0000">
+				</th:if>
+			</div>
+			<div class="Buttons">
+				<button type="submit" class="Form-Btn">編集</button>
+				<button type="button" class="Form-Btn-Delete"><a th:href="@{/delete/{id}(id=*{id})}">削除</a></button>
+				<button type="button" class="Form-Btn-Back"><a th:href="@{/mypage}">戻る</a></button>
+				</button>
+			</div>
+
+		</div>
+	</form>
+</body>
+
+</html>
